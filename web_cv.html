@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segun Obasooto | Senior Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#1e3a8a',
+                        accent: '#3b82f6',
+                        dark: '#1f2937',
+                        light: '#f9fafb'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 32px;
+            height: calc(100% - 32px);
+            width: 2px;
+            background-color: #3b82f6;
+        }
+        
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(rgba(30, 64, 175, 0.2) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="text-xl font-bold text-primary">Segun Obasooto</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Skills</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Experience</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Projects</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                        <span class="text-primary">Senior Software Engineer</span><br>
+                        System Integration Expert<br>
+                        Legacy Modernization Specialist
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Bridging Nigerian market expertise with international standards to deliver robust, scalable solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="bg-primary hover:bg-secondary text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                            View Projects
+                        </a>
+                        <a href="#" class="bg-white hover:bg-gray-100 text-primary font-medium py-3 px-6 rounded-lg border border-primary transition duration-300">
+                            Download CV
+                        </a>
+                        <a href="#contact" class="text-primary hover:text-secondary font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center">
+                            Contact Me <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-primary rounded-full overflow-hidden shadow-xl">
+    <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFnNqfOY6Ms-Q/profile-displayphoto-shrink_200_200/B4DZcbb3hoGkAY-/0/1748511980222?e=1753920000&amp;v=beta&amp;t=-cIV62sac443mPR5Fi7T5DD9laKzZvukHOzjhCcRWRQ"
+             alt="Segun Obasooto"
+             class="object-cover w-full h-full rounded-full">
+    </div>
+</div>
+                        <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg">
+                            <div class="flex items-center">
+                                <div class="bg-green-500 rounded-full p-1 mr-2">
+                                    <i class="fas fa-circle text-xs text-white"></i>
+                                </div>
+                                <span class="text-sm font-medium">Available for work</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-2">About Me</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-64 h-64 bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                        <!-- Another placeholder image -->
+                        <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                            <i class="fas fa-user-tie text-5xl text-gray-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4">From Microbiology to Software Engineering</h3>
+                    <p class="text-gray-600 mb-4">
+                        My journey into technology began with a Bachelor's degree in Microbiology, but my passion for problem-solving and creating solutions led me to software engineering. This unique background gives me a multidisciplinary perspective that enhances my approach to system design and integration.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        As a Senior Software Engineer with expertise in Team Leadership, system integration, legacy modernization, scripting and automation, I've successfully delivered solutions for both government agencies and private sector clients in Nigeria. My work has resulted in measurable improvements, including 20% reduction in system downtime and 25% increase in operational efficiency.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-3">
+                                <i class="fas fa-users text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Collaborative</h4>
+                                <p class="text-sm text-gray-500">Strong team player with excellent communication skills</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-3">
+                                <i class="fas fa-lightbulb text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Problem Solver</h4>
+                                <p class="text-sm text-gray-500">Creative approach to complex technical challenges</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-3">
+                                <i class="fas fa-book text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Continuous Learner</h4>
+                                <p class="text-sm text-gray-500">Committed to staying current with emerging technologies</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-3">
+                                <i class="fas fa-chalkboard-teacher text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Knowledge Sharer</h4>
+                                <p class="text-sm text-gray-500">Experience mentoring and training team members</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-3">
+                        <div class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium">System Integration</div>
+                        <div class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium">Process Automation</div>
+                        <div class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium">Legacy Modernization</div>
+                        <div class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium">Cloud Solutions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-2">Technical Skills</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    A comprehensive set of technical skills developed through years of hands-on experience with enterprise-level projects.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Programming & Development - Enhanced -->
+    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <div class="flex items-center mb-4">
+            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                <i class="fas fa-code text-primary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Programming & Development</h3>
+        </div>
+        <div class="space-y-4">
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">C# / .NET</span>
+                    <span class="text-sm font-medium">90%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 90%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">Entity Framework</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Stored Procedures</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Hangfire</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">CQRS</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">ASP.NET Core</span>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">Python</span>
+                    <span class="text-sm font-medium">80%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 80%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">Django</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Flask</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Pandas</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">NumPy</span>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">Node.js</span>
+                    <span class="text-sm font-medium">75%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 75%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">Express</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">NestJS</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">TypeScript</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">REST APIs</span>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">JavaScript</span>
+                    <span class="text-sm font-medium">85%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 85%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">ES6+</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">jQuery</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">AJAX</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Webpack</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cloud & DevOps - Enhanced -->
+    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <div class="flex items-center mb-4">
+            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                <i class="fas fa-cloud text-primary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Cloud & DevOps</h3>
+        </div>
+        <div class="space-y-4">
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">Microsoft Azure</span>
+                    <span class="text-sm font-medium">85%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 85%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">App Services</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Functions</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">SQL DB</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Key Vault</span>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">AWS</span>
+                    <span class="text-sm font-medium">70%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 70%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">EC2</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">S3</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Lambda</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">RDS</span>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">Docker</span>
+                    <span class="text-sm font-medium">80%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 80%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">Containerization</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Docker Compose</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Multi-stage builds</span>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">CI/CD Pipelines</span>
+                    <span class="text-sm font-medium">75%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 75%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">Azure DevOps</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Jenkins</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">SonarQube</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">GitHub Actions</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Security & Integration - Enhanced -->
+    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <div class="flex items-center mb-4">
+            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                <i class="fas fa-lock text-primary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Security & Integration</h3>
+        </div>
+        <div class="space-y-4">
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">API Development</span>
+                    <span class="text-sm font-medium">90%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 90%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">REST</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">GraphQL</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Swagger</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Postman</span>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">Encryption</span>
+                    <span class="text-sm font-medium">85%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 85%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">AES</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">RSA</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">TLS/SSL</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">PKI</span>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">OAuth/RBAC</span>
+                    <span class="text-sm font-medium">80%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 80%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">JWT</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">OpenID</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Identity Server</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Auth0</span>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium">Secure Protocols</span>
+                    <span class="text-sm font-medium">85%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="skill-bar bg-primary h-2 rounded-full" style="width: 85%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2 text-xs">
+                    <span class="bg-gray-100 px-2 py-1 rounded">SFTP</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">FTPS</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">SSH</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded">Automation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Soft Skills (unchanged from previous version) -->
+    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <div class="flex items-center mb-4">
+            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                <i class="fas fa-users text-primary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Soft Skills</h3>
+        </div>
+        <div class="space-y-3">
+            <div class="flex items-center">
+                <div class="bg-gray-100 p-2 rounded-full mr-3">
+                    <i class="fas fa-chalkboard-teacher text-blue-500"></i>
+                </div>
+                <span class="font-medium">Coaching & Mentoring</span>
+            </div>
+            <div class="flex items-center">
+                <div class="bg-gray-100 p-2 rounded-full mr-3">
+                    <i class="fas fa-flag text-purple-500"></i>
+                </div>
+                <span class="font-medium">Leadership</span>
+            </div>
+            <div class="flex items-center">
+                <div class="bg-gray-100 p-2 rounded-full mr-3">
+                    <i class="fas fa-clock text-green-500"></i>
+                </div>
+                <span class="font-medium">Time Management</span>
+            </div>
+            <div class="flex items-center">
+                <div class="bg-gray-100 p-2 rounded-full mr-3">
+                    <i class="fas fa-hands-helping text-yellow-500"></i>
+                </div>
+                <span class="font-medium">Team Collaboration</span>
+            </div>
+        </div>
+        <div class="mt-4 pt-4 border-t border-gray-200">
+            <h4 class="font-medium mb-2">Additional Strengths</h4>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-gray-100 px-2 py-1 rounded text-xs">Communication</span>
+                <span class="bg-gray-100 px-2 py-1 rounded text-xs">Problem Solving</span>
+                <span class="bg-gray-100 px-2 py-1 rounded text-xs">Adaptability</span>
+                <span class="bg-gray-100 px-2 py-1 rounded text-xs">Conflict Resolution</span>
+                <span class="bg-gray-100 px-2 py-1 rounded text-xs">People Management</span>
+                <span class="bg-gray-100 px-2 py-1 rounded text-xs">Customer Experience</span>
+                <span class="bg-gray-100 px-2 py-1 rounded text-xs">Organization Skills</span>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-2">Professional Experience</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    A timeline of my career progression with measurable achievements and leadership roles.
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Current Role -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white">
+                            <i class="fas fa-briefcase text-xl"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Software Engineer</h3>
+                                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">2020 - Present</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-gray-700 mb-2">Datalytix Limited, Lagos, Nigeria</h4>
+                            <ul class="space-y-3 list-disc list-inside text-gray-600">
+                                <li>Leading the Software Engineering team(Design,Development,Testing and Deployment)</li>
+                                <li>Refactored system, improve processing speed by <span class="font-medium">10%</span></li>
+                                <li>Upgraded legacy .NET applications to modern versions with Azure deployment and IIS</li>
+                                <li>Implemented secure user management system with role-based access control for several systems</li>
+                                <li>Created several High level APIs for internal and external use</li>
+                                <li>Successfully reverse-engineered and resurrected several legacy codebase from DLL</li>
+                            </ul>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">.NET</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Azure</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">C#</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">SQL Server</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">API Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Previous Role -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white">
+                            <i class="fas fa-headset text-xl"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Lead Technical Support Engineer</h3>
+                                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">2018 - 2020</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-gray-700 mb-2">Teksphere Global Services, Lagos, Nigeria</h4>
+                            <ul class="space-y-3 list-disc list-inside text-gray-600">
+                                <li>Success fully onboarded and configured 1200 automation and scripting jobs on MTN EFT</li>
+                                <li>Managed and maintained <span class="font-medium">12+</span> servers.</li>
+                                <li>Implemented automated file transfer and processing pipelines</li>
+                                <li>Provided technical support for <span class="font-medium">MTN Nigeria</span> staff and vendors</li>
+                                <li>Managed secure data transfers with regulatory bodies (FIRS, NCC, NIMC)</li>
+                                <li>Configured DMZ and High Availability systems for enterprise scalability</li>
+                                <li>Reduced system downtime by <span class="font-medium">20%</span> through proactive log analysis</li>
+                                <li>Integrated with several cloud storage solutions (Amazon S3, Azure Blob, Oracle OIC)</li>
+                                <li>Conducted training sessions improving team technical proficiency</li>
+                            </ul>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Technical Support</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Managed File Transfer</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Automation</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Scripting</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">AWS S3</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Azure Blob</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">System Monitoring</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">System Logging</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Training</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Bachelor of Science in Microbiology</h3>
+                                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">2014 - 2018</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-gray-700 mb-2">Adekunle Ajasin University, Akungba, Ondo State</h4>
+                            <p class="text-gray-600">
+                                While my degree was in Microbiology, my passion for technology led me to self-study programming and eventually transition into software engineering. This unique background gives me a multidisciplinary perspective that enhances my problem-solving approach.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+
+    <section id="projects" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-2">Featured Projects</h2>
+            <div class="w-20 h-1 bg-accent mx-auto"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                Selected projects demonstrating my expertise in system integration, process automation, and legacy modernization.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-container">
+            <!-- Initial visible projects -->
+            <!-- Project 1 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-gray-300 flex items-center justify-center">
+                    <i class="fas fa-landmark text-5xl text-gray-500"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold">Joint Tax Board TIN Registration System</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2024</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full flex items-center w-fit">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                            Live
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Full system enhancement for Nigerian tax registration, integrating with multiple government databases while maintaining strict security standards for sensitive citizen data.
+                    </p>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">.NET</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">API Integration</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Government Systems</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Encryption</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Legacy Modernization</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-chart-line mr-1"></i>
+                            <span>Streamlined tax registration process nationwide</span>
+                        </div>
+                        <a href="https://tin.jtb.gov.ng" class="text-primary hover:text-secondary font-medium flex items-center">
+                            Details <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-gray-300 flex items-center justify-center">
+                    <i class="fas fa-university text-5xl text-gray-500"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold">Course Portal for Joint Tax Board</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2021</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full flex items-center w-fit">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                            Live
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Complete design, implementation, testing, and support of an educational portal for tax professionals, featuring user management, content delivery, and progress tracking.
+                    </p>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">PHP</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">MySQL</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Web Development</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Course Management and Certification</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-users mr-1"></i>
+                            <span>1000+ active users</span>
+                        </div>
+                        <a href="https://course.jtb.gov.ng/" class="text-primary hover:text-secondary font-medium flex items-center">
+                            Details <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-gray-300 flex items-center justify-center">
+                    <i class="fas fa-mobile-alt text-5xl text-gray-500"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold">MTN Nigeria SharePoint Uploader</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2021</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full flex items-center w-fit">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
+                            Decommissioned
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Automated file transfer system for enterprise use, processing thousands of documents daily with SharePoint APIs and custom file processing logic.
+                    </p>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">C#</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">SharePoint API</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Automation</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">File Processing</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-clock mr-1"></i>
+                            <span>Reduced manual work by 80%</span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-secondary font-medium flex items-center">
+                            Secured Implementation(no lin)<i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="project-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-gray-300 flex items-center justify-center">
+                    <i class="fas fa-money-bill-wave text-5xl text-gray-500"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold">Internally Generated Revenue System</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2021</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full flex items-center w-fit">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                            Live
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Government revenue tracking and management system with comprehensive reporting features and detailed documentation including user manuals.
+                    </p>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">.NET</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Database Design</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Reporting</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Documentation</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-file-alt mr-1"></i>
+                            <span>50+ page user manual created and frontend revamping</span>
+                        </div>
+                        <a href="https://igrportal.jtb.gov.ng" class="text-primary hover:text-secondary font-medium flex items-center">
+                            Details <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hidden projects (will be shown when "View More" is clicked) -->
+            <div class="project-card hidden more-project bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-gray-300 flex items-center justify-center">
+                    <i class="fas fa-chart-pie text-5xl text-gray-500"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold">Tin Verification Portal</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2024</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full flex items-center w-fit">
+                            <span class="w-2 h-2 bg-yellow-500 rounded-full mr-1"></span>
+                            In Progress
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Interactive for user to check tin validation and download certificates.
+                    </p>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">.Net</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">REST API</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">SQL Server</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-tachometer-alt mr-1"></i>
+                            <span>Currently in progress</span>
+                        </div>
+                        <a href="https://tinverification.jtb.gov.ng/" class="text-primary hover:text-secondary font-medium flex items-center">
+                            Details <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card hidden more-project bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-gray-300 flex items-center justify-center">
+                    <i class="fas fa-shipping-fast text-5xl text-gray-500"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold">Logistics Management System</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2019</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full flex items-center w-fit">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
+                            Did Not Go Live
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        End-to-end solution for shipment tracking, inventory management, and route optimization for a regional logistics company.
+                    </p>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">.Net</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">SQL Server</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Geolocation</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Inventory Management</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-map-marked-alt mr-1"></i>
+                            <span>Optimized delivery routes by 25%</span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-secondary font-medium flex items-center">
+                            No link <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card hidden more-project bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-gray-300 flex items-center justify-center">
+                    <i class="fas fa-hospital text-5xl text-gray-500"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold">Hospital Management System</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2018</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full flex items-center w-fit">
+                            <span class="w-2 h-2 bg-yellow-500 rounded-full mr-1"></span>
+                            In Progress
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Comprehensive system for patient records, appointment scheduling, and billing for a mid-sized healthcare facility.
+                    </p>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Python</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">MySQL</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Django</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">HIPAA Compliance</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-procedures mr-1"></i>
+                            <span>Reduced patient wait times by 40%</span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-secondary font-medium flex items-center">
+                            No Link <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card hidden more-project bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-gray-300 flex items-center justify-center">
+                    <i class="fas fa-graduation-cap text-5xl text-gray-500"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold">E-Learning Platform</h3>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2025</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full flex items-center w-fit">
+                            <span class="w-2 h-2 bg-yellow-500 rounded-full mr-1"></span>
+                            In Progress
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Custom learning management system with video content delivery, quizzes, and certification features for professional training.
+                    </p>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">JavaScript</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Node.js</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">MongoDB</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">Video Streaming</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-book-open mr-1"></i>
+                            <span>100+ courses available</span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-secondary font-medium flex items-center">
+                            Details <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <button id="view-more-btn" class="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition duration-300">
+                <i class="fas fa-plus mr-2"></i> View More Projects
+            </button>
+            <a href="https://github.com/Obasegun123" target="_blank" class="hidden inline-flex items-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition duration-300 ml-4" id="github-link">
+                <i class="fab fa-github mr-2"></i> View more on GitHub
+            </a>
+        </div>
+    </div>
+</section>
+    <!-- Certifications Section -->
+    <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-2">Certifications</h2>
+            <div class="w-20 h-1 bg-accent mx-auto"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                Professional certifications demonstrating my commitment to continuous learning and technical excellence.
+            </p>
+        </div>
+        
+        <div class="flex flex-nowrap overflow-x-auto pb-6 -mx-4 px-4 gap-6">
+            <!-- Certification 1 -->
+            <div class="flex-shrink-0 bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 text-center w-72">
+                <div class="w-20 h-20 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                    <i class="fab fa-microsoft text-blue-500 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">DevOps Engineer Expert</h3>
+                <p class="text-gray-600 mb-3">Microsoft Certified</p>
+                <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2023</span>
+                <div class="mt-4">
+                    <a href="https://learn.microsoft.com/api/credentials/share/en-gb/ObasootoSegun-1508/49C4906521F5ACB9?sharingId" class="text-primary hover:text-secondary text-sm font-medium">Verify Credential</a>
+                </div>
+            </div>
+            
+            <!-- Certification 2 -->
+            <div class="flex-shrink-0 bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 text-center w-72">
+                <div class="w-20 h-20 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                    <i class="fab fa-microsoft text-blue-500 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Azure Administrator</h3>
+                <p class="text-gray-600 mb-3">Microsoft Certified</p>
+                <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2022</span>
+                <div class="mt-4">
+                    <a href="https://learn.microsoft.com/api/credentials/share/en-gb/ObasootoSegun-1508/56F3F193175D85AB?sharingId=EE8C857EF8C8AA1C" class="text-primary hover:text-secondary text-sm font-medium">Verify Credential</a>
+                </div>
+            </div>
+            
+            <!-- Certification 3 -->
+            <div class="flex-shrink-0 bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 text-center w-72">
+                <div class="w-20 h-20 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                    <i class="fab fa-microsoft text-blue-500 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Security, Compliance</h3>
+                <p class="text-gray-600 mb-3">Microsoft Certified</p>
+                <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2023</span>
+                <div class="mt-4">
+                    <a href="https://www.credly.com/badges/27691247-fe5e-4739-9fac-2d219dc10dd3/linked_in_profile" class="text-primary hover:text-secondary text-sm font-medium">Verify Credential</a>
+                </div>
+            </div>
+            
+            <!-- Certification 4 -->
+            <div class="flex-shrink-0 bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 text-center w-72">
+                <div class="w-20 h-20 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+                    <i class="fab fa-aws text-orange-500 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Cloud Practitioner</h3>
+                <p class="text-gray-600 mb-3">AWS Certified</p>
+                <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2022</span>
+                <div class="mt-4">
+                    <a href="https://www.credly.com/badges/ea711b40-6087-4583-927a-0cdfd8d9e588/linked_in_profile" class="text-primary hover:text-secondary text-sm font-medium">Verify Credential</a>
+                </div>
+            </div>
+
+            <!-- Certification 5 -->
+            <div class="flex-shrink-0 bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 text-center w-72">
+                <div class="w-20 h-20 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                    <i class="fab fa-linkedin text-blue-500 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">LinkedIn Learning</h3>
+                <p class="text-gray-600 mb-3">Master In-Demand Professional Soft Skills</p>
+                <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2021</span>
+                <div class="mt-4">
+                    <a href="https://www.linkedin.com/learning/certificates/7ec0eabd719aed34681c9243f8a1848e5d116dd55001c98d8bc6f4eddfdbcaf4?trk=backfilled_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Be%2BZO%2BMRPTpWWdRRnk6HaEg%3D%3D" class="text-primary hover:text-secondary text-sm font-medium">Verify Credential</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12 bg-primary bg-opacity-10 p-6 rounded-lg border border-primary border-opacity-30">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-3/4 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold mb-2">Continuous Learning Journey</h3>
+                    <p class="text-gray-700">
+                        To strengthen my foundation in system and cloud architecture, I'm diving into time-tested open-source technologies, expanding my capabilities while staying aligned with current industry practices.  </p>
+                </div>
+                <div class="md:w-1/4 flex justify-center md:justify-end">
+                    <a href="https://github.com/Obasegun123" class="bg-primary hover:bg-secondary text-white font-medium py-2 px-6 rounded-lg transition duration-300">
+                        View Plan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-2">Get In Touch</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    Interested in working together or have a project in mind? I'd love to hear from you.
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Location</h4>
+                                    <p class="text-gray-600">Ikeja, Lagos, Nigeria</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Email</h4>
+                                    <p class="text-gray-600">obasootosegun@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Phone</h4>
+                                    <p class="text-gray-600">+234 814 775 6346</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fab fa-github text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">GitHub</h4>
+                                    <p class="text-gray-600">github.com/Obasegun123</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-medium text-gray-900 mb-4">Availability</h4>
+                            <div class="flex items-center mb-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                <span class="text-sm text-gray-600">Available for full-time opportunities</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                <span class="text-sm text-gray-600">Open to contract/freelance projects</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                <span class="text-sm text-gray-600">Willing to relocate for the right opportunity</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-900 mb-4">Connect With Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/obasootosegun/" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-linkedin-in text-gray-700"></i>
+                                </a>
+                                <a href="https://x.com/Obasegun123" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-twitter text-gray-700"></i>
+                                </a>
+                                <a href="https://github.com/Obasegun123" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-github text-gray-700"></i>
+                                </a>
+                                <a href="https://stackoverflow.com/users/12823362/obasegun" class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition duration-300">
+                                    <i class="fab fa-stack-overflow text-gray-700"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#home" class="text-xl font-bold text-white">Segun Obasooto</a>
+                    <p class="text-gray-400 mt-1">Senior Software Engineer</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition duration-300">Skills</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition duration-300">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p id="copyright">&copy; <span id="year"></span> Segun Obasooto. All rights reserved.</p>
+                <p class="mt-2">Built with passion in Lagos, Nigeria</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        //Form Submission
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    // Simple validation
+    if (!name || !email || !subject || !message) {
+        alert('Please fill in all fields');
+        return;
+    }
+    
+    // Validate email format
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+    }
+    
+    // Create mailto link
+    const mailtoLink = `mailto:obasootosegun@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show confirmation
+    alert(`Thank you, ${name}! Your email client will open with your message ready to send. Please click send to complete the process.`);
+    
+    // Reset form
+    this.reset();
+});
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Intersection Observer for skill bars animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+
+         const currentYear = new Date().getFullYear();
+  
+  // Update the year in the copyright notice
+  document.getElementById('year').textContent = currentYear;
+
+  // View more projects
+  document.addEventListener('DOMContentLoaded', function() {
+        const viewMoreBtn = document.getElementById('view-more-btn');
+        const githubLink = document.getElementById('github-link');
+        const moreProjects = document.querySelectorAll('.more-project');
+        let projectsShown = 0;
+        
+        viewMoreBtn.addEventListener('click', function() {
+            // Show the next 2 projects (or all remaining if less than 2)
+            const projectsToShow = Math.min(2, moreProjects.length - projectsShown);
+            
+            for (let i = projectsShown; i < projectsShown + projectsToShow; i++) {
+                if (moreProjects[i]) {
+                    moreProjects[i].classList.remove('hidden');
+                }
+            }
+            
+            projectsShown += projectsToShow;
+            
+            // If all projects are shown, hide the view more button and show GitHub link
+            if (projectsShown >= moreProjects.length) {
+                viewMoreBtn.classList.add('hidden');
+                githubLink.classList.remove('hidden');
+            }
+        });
+    });
+    </script>
+</body>
+</html>
